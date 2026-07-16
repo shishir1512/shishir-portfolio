@@ -15,43 +15,49 @@ const Career = () => {
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Position In Company</h4>
-                <h5>Company Name</h5>
+                <h4>Co-Founder</h4>
+                <h5>TheTallMirror</h5>
               </div>
-              <h3>20XX</h3>
+              <h3>2026</h3>
             </div>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
-              labore sit non ipsum temporibus quidem, deserunt eaque officiis
-              mollitia ratione suscipit repellat.
+              Generated ₹1L sales in Week 1 with a 60% gross margin, including driving ₹36K during a 4-hour flea market sprint without any ads. Built sales channels, pricing and GTM strategy from scratch.
             </p>
           </div>
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Position In Company</h4>
-                <h5>Company Name</h5>
+                <h4>UG / BBA Scholar</h4>
+                <h5>IVB & IIMB</h5>
               </div>
-              <h3>20XX</h3>
+              <h3>2025</h3>
             </div>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
-              labore sit non ipsum temporibus quidem, deserunt eaque officiis
-              mollitia ratione suscipit repellat.
+              Pursuing dual degrees: UG in Entrepreneurship at the Institute of Venture Building and a BBA (DBE) at IIM Bangalore.
             </p>
           </div>
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Position In Company</h4>
-                <h5>Company Name</h5>
+                <h4>Creative & Ops Lead</h4>
+                <h5>SOUTHSIDE.BLR</h5>
               </div>
-              <h3>NOW</h3>
+              <h3>2023</h3>
             </div>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
-              labore sit non ipsum temporibus quidem, deserunt eaque officiis
-              mollitia ratione suscipit repellat.
+              Conceptualized themes and graphics for 15+ Bangalore clubs, driving 40% footfall growth and securing 100% sold-out events. Managed 5K+ ticket inventory generating ₹20L+ cumulative revenue.
+            </p>
+          </div>
+          <div className="career-info-box">
+            <div className="career-info-in">
+              <div className="career-role">
+                <h4>Leadership Roles</h4>
+                <h5>Various Initiatives</h5>
+              </div>
+              <h3>2021</h3>
+            </div>
+            <p>
+              Cultural Secretary managing festival budgets; Invictus Captain securing Red Bull sponsorship; MC/Magician for 16 large-scale events driving ₹1Cr+ cumulative revenue.
             </p>
           </div>
         </div>

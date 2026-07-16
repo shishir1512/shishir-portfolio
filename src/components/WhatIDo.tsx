@@ -87,24 +87,26 @@ const WhatIDo = () => {
             <div className="what-corner"></div>
 
             <div className="what-content-in">
-              <h3>DEVELOP</h3>
-              <h4>Description</h4>
+              <h3>PRODUCT & STRATEGY</h3>
+              <h4>Focus Area</h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                quia aliquid laboriosam ducimus sit molestiae.
+                Spearheading product development, conducting market research, and designing GTM strategies to build user-centric products. Experienced in financial modeling, no-code prototyping, and analytics.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
-                <div className="what-tags">JavaScript</div>
-                <div className="what-tags">TypeScript</div>
-                <div className="what-tags">Three.js</div>
-                <div className="what-tags">React</div>
-                <div className="what-tags">Css</div>
-                <div className="what-tags">Node.js</div>
-                <div className="what-tags">Next.js</div>
-                <div className="what-tags">Express.js</div>
-                <div className="what-tags">PHP</div>
-                <div className="what-tags">MySql</div>
+                <div className="what-tags">Product Management</div>
+                <div className="what-tags">Market Strategy</div>
+                <div className="what-tags">Figma</div>
+                <div className="what-tags">Power BI</div>
+                <div className="what-tags">Google Analytics</div>
+                <div className="what-tags">Jira</div>
+                <div className="what-tags">Zapier</div>
+                <div className="what-tags">Airtable</div>
+                <div className="what-tags">Mixpanel</div>
+                <div className="what-tags">Notion</div>
+                <div className="what-tags">Slack</div>
+                <div className="what-tags">Claude</div>
+                <div className="what-tags">Prototyping</div>
               </div>
               <div className="what-arrow"></div>
             </div>
@@ -128,22 +130,24 @@ const WhatIDo = () => {
             </div>
             <div className="what-corner"></div>
             <div className="what-content-in">
-              <h3>DESIGN</h3>
-              <h4>Description</h4>
+              <h3>CREATIVE OPERATIONS</h3>
+              <h4>Focus Area</h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                quia aliquid laboriosam ducimus sit molestiae
+                Directing high-impact brand experiences, managing operational budgets, and leading cross-functional teams. Scaling co-founded ventures, organizing large-scale festivals, and building loyal communities.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
-                <div className="what-tags">Blender</div>
-                <div className="what-tags">Zbrush</div>
-                <div className="what-tags">UI Design</div>
-                <div className="what-tags">Motion</div>
-                <div className="what-tags">Rigging</div>
-                <div className="what-tags">3D Animation</div>
-                <div className="what-tags">Character Design</div>
-                <div className="what-tags">Modelling</div>
+                <div className="what-tags">Creative Strategy</div>
+                <div className="what-tags">Event Management</div>
+                <div className="what-tags">Branding</div>
+                <div className="what-tags">Public Speaking</div>
+                <div className="what-tags">Team Leadership</div>
+                <div className="what-tags">GTM Execution</div>
+                <div className="what-tags">Shopify</div>
+                <div className="what-tags">Bubble</div>
+                <div className="what-tags">N8N</div>
+                <div className="what-tags">HTML/CSS</div>
+                <div className="what-tags">Canva</div>
               </div>
               <div className="what-arrow"></div>
             </div>

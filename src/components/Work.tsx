@@ -6,12 +6,44 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(useGSAP);
 
+const projects = [
+  {
+    num: "01",
+    title: "Digital Transformation",
+    category: "Web Development & Automation",
+    tools: "HTML, CSS, JS, Forms Automation",
+    image: "/images/digital_transformation.png",
+  },
+  {
+    num: "02",
+    title: "Consulting & Finance",
+    category: "Financial Analytics & GTM",
+    tools: "Power BI, Data Analytics, Financial Modeling",
+    image: "/images/consulting_finance.png",
+  },
+  {
+    num: "03",
+    title: "LuxShare & CoFound",
+    category: "Product Design & UX",
+    tools: "Figma, UI/UX Design, Prototyping",
+    image: "/images/luxshare_cofound.png",
+  },
+  {
+    num: "04",
+    title: "PM Capstone & Immersions",
+    category: "Strategy & Analysis",
+    tools: "Product Management, Market Research, Team Leadership",
+    image: "/images/pm_capstone.png",
+  },
+];
+
 const Work = () => {
   useGSAP(() => {
   let translateX: number = 0;
 
   function setTranslateX() {
     const box = document.getElementsByClassName("work-box");
+    if (box.length === 0) return;
     const rectLeft = document
       .querySelector(".work-container")!
       .getBoundingClientRect().left;
@@ -53,21 +85,21 @@ const Work = () => {
           My <span>Work</span>
         </h2>
         <div className="work-flex">
-          {[...Array(6)].map((_value, index) => (
+          {projects.map((project, index) => (
             <div className="work-box" key={index}>
               <div className="work-info">
                 <div className="work-title">
-                  <h3>0{index + 1}</h3>
+                  <h3>{project.num}</h3>
 
                   <div>
-                    <h4>Project Name</h4>
-                    <p>Category</p>
+                    <h4>{project.title}</h4>
+                    <p>{project.category}</p>
                   </div>
                 </div>
                 <h4>Tools and features</h4>
-                <p>Javascript, TypeScript, React, Threejs</p>
+                <p>{project.tools}</p>
               </div>
-              <WorkImage image="/images/placeholder.webp" alt="" />
+              <WorkImage image={project.image} alt={project.title} />
             </div>
           ))}
         </div>

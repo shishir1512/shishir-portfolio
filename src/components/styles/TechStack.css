@@ -1,0 +1,120 @@
+.techstack-section {
+  width: 100%;
+  position: relative;
+  height: auto;
+  margin: auto;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  padding: 100px 0;
+  background-color: var(--backgroundColor);
+  z-index: 10;
+}
+
+.techstack-container {
+  width: var(--cWidth);
+  max-width: var(--cMaxWidth);
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.techstack-container h2.title {
+  font-size: 70px;
+  text-align: center;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 80px;
+  background: linear-gradient(0deg, #7f40ff, #ffffff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.marquee-wrapper {
+  width: 100%;
+  margin-bottom: 30px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Custom fade effects */
+.marquee-wrapper::before,
+.marquee-wrapper::after {
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: 150px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marquee-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, #0b080c 0%, transparent 100%);
+}
+
+.marquee-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, #0b080c 0%, transparent 100%);
+}
+
+.skill-card {
+  padding: 18px 36px;
+  margin: 0 15px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  color: #e0e0e0;
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: default;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-card span {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+  background: rgba(170, 66, 255, 0.08);
+  border-color: rgba(170, 66, 255, 0.5);
+  box-shadow: 0 8px 32px rgba(170, 66, 255, 0.15), 
+              inset 0 0 12px rgba(170, 66, 255, 0.1);
+  color: #ffffff;
+  transform: translateY(-4px);
+}
+
+.skill-card:hover span {
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 900px) {
+  .techstack-section {
+    padding: 60px 0;
+    margin-top: 50px;
+  }
+  .techstack-container h2.title {
+    font-size: 40px;
+    margin-bottom: 40px;
+  }
+  .skill-card {
+    padding: 12px 24px;
+    font-size: 16px;
+    margin: 0 10px;
+    border-radius: 12px;
+  }
+  .marquee-wrapper::before,
+  .marquee-wrapper::after {
+    width: 50px;
+  }
+}
