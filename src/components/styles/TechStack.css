@@ -26,7 +26,7 @@
   font-weight: 400;
   text-transform: uppercase;
   margin-bottom: 80px;
-  background: linear-gradient(135deg, #bd5cff, #f43f5e, #38bdf8);
+  background: linear-gradient(0deg, #7f40ff, #ffffff);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -53,12 +53,12 @@
 
 .marquee-wrapper::before {
   left: 0;
-  background: linear-gradient(to right, #050306 0%, transparent 100%);
+  background: linear-gradient(to right, #0b080c 0%, transparent 100%);
 }
 
 .marquee-wrapper::after {
   right: 0;
-  background: linear-gradient(to left, #050306 0%, transparent 100%);
+  background: linear-gradient(to left, #0b080c 0%, transparent 100%);
 }
 
 .skill-card {
@@ -86,10 +86,10 @@
 }
 
 .skill-card:hover {
-  background: rgba(189, 92, 255, 0.08);
-  border-color: rgba(217, 70, 239, 0.6);
-  box-shadow: 0 8px 32px rgba(217, 70, 239, 0.2), 
-              inset 0 0 12px rgba(189, 92, 255, 0.15);
+  background: rgba(170, 66, 255, 0.08);
+  border-color: rgba(170, 66, 255, 0.5);
+  box-shadow: 0 8px 32px rgba(170, 66, 255, 0.15), 
+              inset 0 0 12px rgba(170, 66, 255, 0.1);
   color: #ffffff;
   transform: translateY(-4px);
 }
