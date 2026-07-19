@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume - Shishir KB</title>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #0b080c;
+      --text-color: #eae5ec;
+      --accent-color: #bd5cff;
+      --accent-rgb: 189, 92, 255;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --card-bg: rgba(255, 255, 255, 0.02);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Geist', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.5;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.01);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 40px;
+      backdrop-filter: blur(10px);
+      position: relative;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 30px;
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .header-info h1 {
+      font-size: 38px;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #a855f7, #fb7185, #38bdf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 5px;
+    }
+
+    .header-info p {
+      font-size: 16px;
+      color: #9f9baa;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+    }
+
+    .contact-details {
+      text-align: right;
+      font-size: 14px;
+      font-weight: 300;
+      color: #eae5ec;
+    }
+
+    .contact-details a {
+      color: var(--accent-color);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-details a:hover {
+      color: #d946ef;
+    }
+
+    .contact-details div {
+      margin-bottom: 5px;
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    section {
+      margin-bottom: 10px;
+    }
+
+    h2.section-title {
+      font-size: 20px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--accent-color);
+      border-bottom: 1px dashed var(--border-color);
+      padding-bottom: 8px;
+      margin-bottom: 20px;
+    }
+
+    .edu-item, .exp-item, .project-item {
+      margin-bottom: 24px;
+    }
+
+    .exp-item:last-child, .edu-item:last-child, .project-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .item-title {
+      font-size: 18px;
+      font-weight: 500;
+      color: #ffffff;
+    }
+
+    .item-sub {
+      font-size: 14px;
+      color: #a855f7;
+      font-weight: 400;
+    }
+
+    .item-date {
+      font-size: 13px;
+      color: #9f9baa;
+      font-weight: 300;
+    }
+
+    .item-desc {
+      font-size: 14px;
+      color: #c5c1cb;
+      font-weight: 300;
+      margin-top: 6px;
+      list-style-type: none;
+    }
+
+    .item-desc li {
+      position: relative;
+      padding-left: 15px;
+      margin-bottom: 6px;
+    }
+
+    .item-desc li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent-color);
+    }
+
+    .skills-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-tag {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 300;
+      color: #eae5ec;
+      transition: all 0.3s;
+    }
+
+    .skill-tag:hover {
+      border-color: var(--accent-color);
+      background: rgba(189, 92, 255, 0.05);
+      color: #ffffff;
+    }
+
+    /* Print & Floating Button Styles */
+    .print-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: linear-gradient(135deg, #a855f7, #d946ef);
+      color: #ffffff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(189, 92, 255, 0.4);
+      transition: all 0.3s;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .print-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(189, 92, 255, 0.6);
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 20px 10px;
+      }
+      .container {
+        padding: 20px;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .contact-details {
+        text-align: left;
+      }
+      .header-info h1 {
+        font-size: 30px;
+      }
+    }
+
+    /* Print styling rules */
+    @media print {
+      body {
+        background-color: #ffffff;
+        color: #1a1a1a;
+        padding: 0;
+      }
+      .container {
+        border: none;
+        background: transparent;
+        padding: 0;
+        max-width: 100%;
+      }
+      .print-btn {
+        display: none;
+      }
+      .header-info h1 {
+        background: none;
+        -webkit-text-fill-color: initial;
+        color: #000000;
+      }
+      .item-title {
+        color: #000000;
+      }
+      .item-sub, h2.section-title {
+        color: #701a99;
+      }
+      .item-desc {
+        color: #333333;
+      }
+      .skill-tag {
+        border: 1px solid #cccccc;
+        background: transparent;
+        color: #000000;
+      }
+      .contact-details, .item-date {
+        color: #555555;
+      }
+      .contact-details a {
+        color: #000000;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <button class="print-btn" onclick="window.print()">
+    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+      <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1"/>
+      <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4zm1 5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5m0 8v-3h6v3zm7-1H3v-3h10z"/>
+    </svg>
+    Print / Save PDF
+  </button>
+
+  <div class="container">
+    <header>
+      <div class="header-info">
+        <h1>Shishir KB</h1>
+        <p>Creative Strategist | Product Management | Aspiring Entrepreneur</p>
+      </div>
+      <div class="contact-details">
+        <div>Email: <a href="mailto:shishirkb1512@gmail.com">shishirkb1512@gmail.com</a></div>
+        <div>Phone: <a href="tel:+919606089365">+91 96060 89365</a></div>
+        <div>LinkedIn: <a href="https://linkedin.com/in/shishirkb1512/" target="_blank">linkedin.com/in/shishirkb1512</a></div>
+        <div>Website: <a href="https://shishir1512.github.io/shishir-portfolio/" target="_blank">shishir-portfolio</a></div>
+      </div>
+    </header>
+
+    <div class="section-grid">
+      
+      <!-- EDUCATION -->
+      <section>
+        <h2 class="section-title">Academic Qualifications</h2>
+        
+        <div class="edu-item">
+          <div class="item-header">
+            <div class="item-title">UG in Entrepreneurship</div>
+            <div class="item-date">2025 - 2028 (Pursuing)</div>
+          </div>
+          <div class="item-sub">Institute of Venture Building</div>
+        </div>
+
+        <div class="edu-item">
+          <div class="item-header">
+            <div class="item-title">BBA (DBE)</div>
+            <div class="item-date">2025 - 2028 (Pursuing)</div>
+          </div>
+          <div class="item-sub">IIM Bangalore</div>
+        </div>
+
+        <div class="edu-item">
+          <div class="item-header">
+            <div class="item-title">Class XII</div>
+            <div class="item-date">2024</div>
+          </div>
+          <div class="item-sub">Allen Career Institute (90%)</div>
+        </div>
+
+        <div class="edu-item">
+          <div class="item-header">
+            <div class="item-title">Class X</div>
+            <div class="item-date">2022</div>
+          </div>
+          <div class="item-sub">St. Joseph's Central School (91%)</div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section>
+        <h2 class="section-title">Professional Experience</h2>
+        
+        <div class="exp-item">
+          <div class="item-header">
+            <div class="item-title">Co-Founder</div>
+            <div class="item-date">Jun 2026 - Present</div>
+          </div>
+          <div class="item-sub">TheTallMirror</div>
+          <ul class="item-desc">
+            <li>Generated ₹1L sales in Week 1 with a 60% gross margin, including driving ₹36K during a 4-hour flea market sprint without any ads.</li>
+            <li>Secured 50K organic Instagram views in week 1; built B2C & B2B sales channels, pricing and GTM strategy from scratch.</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="item-header">
+            <div class="item-title">Creative & Operations Lead</div>
+            <div class="item-date">Mar 2023 - Dec 2023</div>
+          </div>
+          <div class="item-sub">SOUTHSIDE.BLR</div>
+          <ul class="item-desc">
+            <li>Conceptualized themes and graphics for 15+ Bangalore clubs, driving 40% footfall growth and securing 100% sold-out events.</li>
+            <li>Managed 5K+ ticket inventory and generated ₹20L+ cumulative revenue, exceeding sales targets by 25% to earn performance bonuses.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- POSITIONS OF RESPONSIBILITY -->
+      <section>
+        <h2 class="section-title">Positions of Responsibility</h2>
+        
+        <div class="exp-item">
+          <div class="item-header">
+            <div class="item-title">Cultural Secretary</div>
+            <div class="item-date">2025</div>
+          </div>
+          <div class="item-sub">Campus Festivals</div>
+          <ul class="item-desc">
+            <li>Won a 3-year election term to direct major campus festivals; personally managed a ₹50K budget and hosted 4 high-scale events.</li>
+            <li>Invested in in-house AV assets to eliminate rental fees, praised by faculty for fiscal management and elevating culture.</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="item-header">
+            <div class="item-title">Invictus Captain</div>
+            <div class="item-date">Inter-franchise Games</div>
+          </div>
+          <div class="item-sub">Franchise Leadership</div>
+          <ul class="item-desc">
+            <li>Auctioned to captain a 10-sport franchise; transformed an underdog roster and built a loyal, high-retention team culture.</li>
+            <li>Secured 5 corporate sponsors including Red Bull and personally designed all official team merchandise and branding.</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="item-header">
+            <div class="item-title">Event Logistics & MC/Magician</div>
+            <div class="item-date">2021</div>
+          </div>
+          <div class="item-sub">Large Scale Event Management</div>
+          <ul class="item-desc">
+            <li>Coordinated a major gathering on a 24-hour lead time, managing end-to-end logistics and generated ₹1.2 L in revenue.</li>
+            <li>Co-hosted and performed as MC/Magician for 16 large-scale events, boosting crowd engagement to drive ₹1Cr+ cumulative revenue.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section>
+        <h2 class="section-title">Key Projects</h2>
+
+        <div class="project-item">
+          <div class="item-header">
+            <div class="item-title">Digital Transformation</div>
+            <div class="item-sub">Manufacturing Website & Lead System</div>
+          </div>
+          <ul class="item-desc">
+            <li>Built a responsive manufacturing website via HTML/CSS/JS, launching an online RFQ system boosting online B2B leads by 25%.</li>
+            <li>Integrated automated form backend logic to capture and route complex engineering specifications to shrink the sales cycle by 35%.</li>
+          </ul>
+        </div>
+
+        <div class="project-item">
+          <div class="item-header">
+            <div class="item-title">Consulting & Finance</div>
+            <div class="item-sub">Wealth Management Roadmap & Dashboard</div>
+          </div>
+          <ul class="item-desc">
+            <li>Developed a 90–120 day wealth management roadmap using a 70/30 organic-to-paid marketing framework to optimize CAC.</li>
+            <li>Engineered a Power BI dashboard and data-driven ad concepts comparing asset returns, accelerating client conversion by 30%.</li>
+          </ul>
+        </div>
+
+        <div class="project-item">
+          <div class="item-header">
+            <div class="item-title">Product & Design</div>
+            <div class="item-sub">LuxShare, CoFound, Disbumble & Lingo Link</div>
+          </div>
+          <ul class="item-desc">
+            <li>Led development of LuxShare and CoFound, securing 1st in both competitions for user-centric design and market viability.</li>
+            <li>Engineered Disbumble and Lingo Link apps; awarded 1st for addressing niche accessibility and linguistic gaps.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section>
+        <h2 class="section-title">Tools & Technical Skills</h2>
+        <div class="skills-flex">
+          <div class="skill-tag">Figma / Adobe XD</div>
+          <div class="skill-tag">Canva</div>
+          <div class="skill-tag">Slack / Notion</div>
+          <div class="skill-tag">Power BI</div>
+          <div class="skill-tag">HTML / CSS</div>
+          <div class="skill-tag">GitHub</div>
+          <div class="skill-tag">Google Analytics</div>
+          <div class="skill-tag">Meta Ads</div>
+          <div class="skill-tag">Jira</div>
+          <div class="skill-tag">Zapier</div>
+          <div class="skill-tag">Airtable</div>
+          <div class="skill-tag">Mixpanel</div>
+          <div class="skill-tag">Lovable</div>
+          <div class="skill-tag">Bubble</div>
+          <div class="skill-tag">Claude</div>
+          <div class="skill-tag">Semrush</div>
+          <div class="skill-tag">Shopify</div>
+          <div class="skill-tag">N8N</div>
+          <div class="skill-tag">Product Management</div>
+          <div class="skill-tag">UI/UX Design</div>
+          <div class="skill-tag">GTM Execution</div>
+          <div class="skill-tag">Branding & Positioning</div>
+          <div class="skill-tag">Financial Analysis</div>
+          <div class="skill-tag">Public Speaking</div>
+          <div class="skill-tag">Team Leadership</div>
+          <div class="skill-tag">Behavioral Economics</div>
+        </div>
+      </section>
+
+      <!-- SPORTS & CO-CURRICULAR -->
+      <section>
+        <h2 class="section-title">Sports & Achievements</h2>
+        <ul class="item-desc">
+          <li><strong>Athletics:</strong> National Basketball Championship (U-19) semifinalist at age 13; recognized by the Ministry of Youth Affairs, CBSE, Govt. of India.</li>
+          <li><strong>Martial Arts:</strong> Ranked 2nd Kyu Brown Belt (WKF/KAI); completed intensive training seminar under IOC-recognized Grandmasters.</li>
+          <li><strong>Esports:</strong> Represented Team India (Jr) and professional organizations (CRITICAL-X / WAR) in international tournaments, securing 2 championship wins.</li>
+          <li><strong>Health Journey:</strong> Executed a 55kg fat loss journey across two phases, developing advanced nutrition planning and client coaching skills.</li>
+          <li><strong>Achievements:</strong> Micro-venture kits (100% ROI, 50% profit); Olympiad international cyber rank 536; sole qualifying team at RIMSE (low-cost gig-worker hoverboard); completed McKinsey Forward program.</li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+</body>
+</html>
