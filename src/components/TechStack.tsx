@@ -28,7 +28,10 @@ function createCenteredCanvas(imgUrl: string) {
     ctx.fillStyle = "#ffffff";
     ctx.fillRect(0, 0, 512, 512);
 
-    const maxDim = 280;
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = "high";
+
+    const maxDim = 370;
     let w = img.width;
     let h = img.height;
     if (w > h) {
@@ -198,12 +201,11 @@ const TechStack = () => {
       (texture) =>
         new THREE.MeshPhysicalMaterial({
           map: texture,
-          emissive: "#ffffff",
-          emissiveMap: texture,
-          emissiveIntensity: 0.1,
-          metalness: 0.1,
-          roughness: 0.3,
-          clearcoat: 0.5,
+          color: "#ffffff",
+          metalness: 0.05,
+          roughness: 0.2,
+          clearcoat: 0.6,
+          clearcoatRoughness: 0.1,
         })
     );
   }, []);
