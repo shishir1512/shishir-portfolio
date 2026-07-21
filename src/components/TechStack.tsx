@@ -20,10 +20,9 @@ function createCenteredCanvas(imgUrl: string) {
   ctx.fillRect(0, 0, 512, 512);
 
   const texture = new THREE.CanvasTexture(canvas);
+  texture.colorSpace = THREE.SRGBColorSpace;
 
   const img = new Image();
-  img.crossOrigin = "anonymous";
-  img.src = imgUrl;
   img.onload = () => {
     ctx.fillStyle = "#ffffff";
     ctx.fillRect(0, 0, 512, 512);
@@ -31,23 +30,29 @@ function createCenteredCanvas(imgUrl: string) {
     ctx.imageSmoothingEnabled = true;
     ctx.imageSmoothingQuality = "high";
 
-    const maxDim = 370;
+    const maxDim = 320;
     let w = img.width;
     let h = img.height;
-    if (w > h) {
-      h = (h / w) * maxDim;
-      w = maxDim;
-    } else {
-      w = (w / h) * maxDim;
-      h = maxDim;
+    if (w > 0 && h > 0) {
+      if (w > h) {
+        h = (h / w) * maxDim;
+        w = maxDim;
+      } else {
+        w = (w / h) * maxDim;
+        h = maxDim;
+      }
+
+      const x = (512 - w) / 2;
+      const y = (512 - h) / 2;
+
+      ctx.drawImage(img, x, y, w, h);
     }
-
-    const x = (512 - w) / 2;
-    const y = (512 - h) / 2;
-
-    ctx.drawImage(img, x, y, w, h);
     texture.needsUpdate = true;
   };
+  img.onerror = (err) => {
+    console.error("Failed to load image for 3D sphere:", imgUrl, err);
+  };
+  img.src = imgUrl;
 
   return texture;
 }
