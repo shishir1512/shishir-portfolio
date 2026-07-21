@@ -11,15 +11,60 @@ import {
   RapierRigidBody,
 } from "@react-three/rapier";
 
-const textureLoader = new THREE.TextureLoader();
+function createCenteredCanvas(imgUrl: string) {
+  const canvas = document.createElement("canvas");
+  canvas.width = 512;
+  canvas.height = 512;
+  const ctx = canvas.getContext("2d")!;
+  ctx.fillStyle = "#ffffff";
+  ctx.fillRect(0, 0, 512, 512);
+
+  const texture = new THREE.CanvasTexture(canvas);
+
+  const img = new Image();
+  img.crossOrigin = "anonymous";
+  img.src = imgUrl;
+  img.onload = () => {
+    ctx.fillStyle = "#ffffff";
+    ctx.fillRect(0, 0, 512, 512);
+
+    const maxDim = 280;
+    let w = img.width;
+    let h = img.height;
+    if (w > h) {
+      h = (h / w) * maxDim;
+      w = maxDim;
+    } else {
+      w = (w / h) * maxDim;
+      h = maxDim;
+    }
+
+    const x = (512 - w) / 2;
+    const y = (512 - h) / 2;
+
+    ctx.drawImage(img, x, y, w, h);
+    texture.needsUpdate = true;
+  };
+
+  return texture;
+}
+
 const imageUrls = [
   "/images/lovable.png",
   "/images/bubble.png",
   "/images/excel.png",
   "/images/claude.png",
   "/images/wordpress.jpg",
+  "/images/react2.webp",
+  "/images/next2.webp",
+  "/images/node2.webp",
+  "/images/express.webp",
+  "/images/mongo.webp",
+  "/images/mysql.webp",
+  "/images/typescript.webp",
+  "/images/javascript.webp",
 ];
-const textures = imageUrls.map((url) => textureLoader.load(url));
+const textures = imageUrls.map((url) => createCenteredCanvas(url));
 
 const sphereGeometry = new THREE.SphereGeometry(1, 28, 28);
 
@@ -155,10 +200,10 @@ const TechStack = () => {
           map: texture,
           emissive: "#ffffff",
           emissiveMap: texture,
-          emissiveIntensity: 0.3,
-          metalness: 0.5,
-          roughness: 1,
-          clearcoat: 0.1,
+          emissiveIntensity: 0.1,
+          metalness: 0.1,
+          roughness: 0.3,
+          clearcoat: 0.5,
         })
     );
   }, []);
