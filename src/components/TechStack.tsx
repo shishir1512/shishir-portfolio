@@ -58,21 +58,27 @@ const imageUrls = [
   "/images/excel.png",
   "/images/claude.png",
   "/images/wordpress.jpg",
-  "/images/react2.webp",
-  "/images/next2.webp",
-  "/images/node2.webp",
-  "/images/express.webp",
-  "/images/mongo.webp",
-  "/images/mysql.webp",
-  "/images/typescript.webp",
-  "/images/javascript.webp",
+  "/images/powerbi.jpg",
+  "/images/shopify.png",
+  "/images/jira.png",
+  "/images/airtable.png",
+  "/images/github.png",
+  "/images/analytics.png",
+  "/images/n8n.png",
+  "/images/figma.png",
+  "/images/capcut.png",
+  "/images/semrush.png",
+  "/images/metaads.png",
+  "/images/zapier.png",
+  "/images/slack.png",
+  "/images/adobe.jpg",
 ];
 const textures = imageUrls.map((url) => createCenteredCanvas(url));
 
 const sphereGeometry = new THREE.SphereGeometry(1, 28, 28);
 
-const spheres = [...Array(30)].map(() => ({
-  scale: [0.7, 1, 0.8, 1, 1][Math.floor(Math.random() * 5)],
+const spheres = [...Array(imageUrls.length)].map(() => ({
+  scale: [0.75, 1, 0.85, 1, 0.9][Math.floor(Math.random() * 5)],
 }));
 
 type SphereProps = {
