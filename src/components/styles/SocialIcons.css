@@ -65,8 +65,14 @@
 .resume-button:hover {
   color: #fff;
 }
-div.resume-button span {
-  color: #fff;
+.creatives-button {
+  color: #ff2e93 !important;
+}
+.creatives-button:hover {
+  color: #ff60ad !important;
+}
+.resume-button span, div.resume-button span {
+  color: inherit;
   font-size: 17px;
   margin-top: -1px;
   display: flex;
