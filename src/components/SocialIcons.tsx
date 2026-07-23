@@ -7,9 +7,33 @@ import {
 import "./styles/SocialIcons.css";
 import { TbNotes } from "react-icons/tb";
 import { useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import HoverLinks from "./HoverLinks";
 
 const SocialIcons = () => {
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const anim = gsap.fromTo(
+      ".creatives-button",
+      { opacity: 1, pointerEvents: "auto" },
+      {
+        opacity: 0,
+        pointerEvents: "none",
+        scrollTrigger: {
+          trigger: "#about",
+          start: "bottom 30%",
+          end: "bottom 10%",
+          scrub: true,
+          invalidateOnRefresh: true,
+        },
+      }
+    );
+    return () => {
+      if (anim.scrollTrigger) anim.scrollTrigger.kill();
+      anim.kill();
+    };
+  }, []);
   useEffect(() => {
     const social = document.getElementById("social") as HTMLElement;
 
